@@ -4,11 +4,13 @@ package com.pluralsight.data.mysql;
 import org.springframework.stereotype.Component;
 import com.pluralsight.data.CategoryDao;
 import com.pluralsight.model.Category;
-
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+
 
 @Component
 public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
@@ -51,20 +53,16 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         // delete category
     }
 
-    private Category mapRow(ResultSet row) throws SQLException
-    {
-        int categoryId = row.getInt("category_id");
-        String name = row.getString("name");
-        String description = row.getString("description");
-
-        Category category = new Category()
-        {{
-            setCategoryId(categoryId);
-            setName(name);
-            setDescription(description);
-        }};
-
+    private Category mapRow(ResultSet row) throws SQLException { // replaced double curly brace code with cleaner code
+        Category category = new Category();
+        category.setCategoryId(row.getInt("category_id"));
+        category.setName(row.getString("name"));
+        category.setDescription(row.getString("description"));
         return category;
     }
 
-}
+
+
+
+
+    }

@@ -27,7 +27,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao {
                 "WHERE (category_id = ? OR ? = -1) " +
                 "  AND (price >= ? OR ? = -1) " +
                 "  AND (price <= ? OR ? = -1) " +
-                "  AND (sub_category = ? OR ? = '') ";
+                "  AND (subcategory = ? OR ? = '') ";
 
         categoryId = categoryId == null ? -1 : categoryId;
         minPrice = minPrice == null ? new BigDecimal("-1") : minPrice;
@@ -110,7 +110,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao {
     @Override
     public Product create(Product product) {
         String sql = "INSERT INTO products " +
-                "(name, price, category_id, description, sub_category, stock, image_url, featured) " +
+                "(name, price, category_id, description, subcategory, stock, image_url, featured) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = getConnection();
@@ -143,7 +143,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao {
     @Override
     public void update(int productId, Product product) {
         String sql = "UPDATE products SET " +
-                "name=?, price=?, category_id=?, description=?, sub_category=?, stock=?, image_url=?, featured=? " +
+                "name=?, price=?, category_id=?, description=?, subcategory=?, stock=?, image_url=?, featured=? " +
                 "WHERE product_id=?";
 
         try (Connection conn = getConnection();
@@ -188,7 +188,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao {
         p.setPrice(rs.getBigDecimal("price"));
         p.setCategoryId(rs.getInt("category_id"));
         p.setDescription(rs.getString("description"));
-        p.setSubCategory(rs.getString("sub_category"));
+        p.setSubCategory(rs.getString("subcategory"));
         p.setStock(rs.getInt("stock"));
         p.setImageUrl(rs.getString("image_url"));
         p.setFeatured(rs.getBoolean("featured"));
