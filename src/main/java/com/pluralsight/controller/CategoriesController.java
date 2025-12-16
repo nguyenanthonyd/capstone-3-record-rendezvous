@@ -12,8 +12,10 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+
+
 @RestController
-@RequestMapping("categories")
+@RequestMapping("/categories")
 @CrossOrigin
 public class CategoriesController {
 
@@ -97,13 +99,33 @@ public class CategoriesController {
     public void deleteCategory(@PathVariable int id) {
         try {
             Category existing = categoryDao.getById(id);
-            if (existing == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            if (existing == null) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Category not found.");
+            }
+
+            // clean guard: block delete if it still has products
+            List<Product> products = productDao.listByCategoryId(id);
+            if (products != null && !products.isEmpty()) {
+                throw new ResponseStatusException(
+                        HttpStatus.CONFLICT,
+                        "Cannot delete category while products still reference it. Move/delete products first."
+                );
+            }
 
             categoryDao.delete(id);
+
         } catch (ResponseStatusException ex) {
+            // /already a clean HTTP response → let it pass through
             throw ex;
+
         } catch (Exception ex) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+            // LAST fallback only (unexpected bugs)
+            ex.printStackTrace();   // dev-only: shows real error in console
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR,
+                    "Oops... our bad.");
+
         }
+
     }
 }
