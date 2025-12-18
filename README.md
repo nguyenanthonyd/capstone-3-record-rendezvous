@@ -9,7 +9,7 @@
 
 The API allows users to browse music records by category while enabling administrators to securely manage products and categories. It uses **JWT authentication**, **role-based authorization**, and a **MySQL database**, demonstrating real-world backend development practices.
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+
 ## 🖥️ Application Screens
 
 > Screenshots below show the application tested using Postman and MySQL.
@@ -26,7 +26,7 @@ The API allows users to browse music records by category while enabling administ
 * **Database Tables**
   ![MySQL Tables](images/mysql-tables.png)
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+
 ## ⭐ Interesting Code Highlight
 
 A key feature of this project is the **DAO (Data Access Object) pattern**, which separates database logic from controllers and services. (Java)
@@ -63,12 +63,12 @@ public class JdbcProductDao implements ProductDao {
     }
 }
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+
 * Keeps database logic isolated
 * Uses JDBC with safe resource handling
 * Makes the application easier to maintain and extend
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+
    Technologies Used
 
 * Java 17
@@ -78,7 +78,7 @@ public class JdbcProductDao implements ProductDao {
 * Maven
 * Postman
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+
   Future Improvements
 
 - Order checkout and payment processing
