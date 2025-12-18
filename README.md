@@ -29,9 +29,9 @@ The API allows users to browse music records by category while enabling administ
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 ## ⭐ Interesting Code Highlight
 
-A key feature of this project is the **DAO (Data Access Object) pattern**, which separates database logic from controllers and services.
+A key feature of this project is the **DAO (Data Access Object) pattern**, which separates database logic from controllers and services. (Java)
 
-```java
+
 @Component
 public class JdbcProductDao implements ProductDao {
 
@@ -62,6 +62,7 @@ public class JdbcProductDao implements ProductDao {
         return products;
     }
 }
+
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 * Keeps database logic isolated
 * Uses JDBC with safe resource handling
