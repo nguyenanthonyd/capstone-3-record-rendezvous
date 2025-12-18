@@ -9,7 +9,7 @@
 
 The API allows users to browse music records by category while enabling administrators to securely manage products and categories. It uses **JWT authentication**, **role-based authorization**, and a **MySQL database**, demonstrating real-world backend development practices.
 
-⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
+⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 ## 🖥️ Application Screens
 
 > Screenshots below show the application tested using Postman and MySQL.
