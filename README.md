@@ -33,37 +33,22 @@ The API allows users to browse music records by category while enabling administ
 
 ## ⭐ Interesting Code Highlight
 
-A key feature of this project is the **DAO (Data Access Object) pattern**, which separates database logic from controllers and services. (Java)
+@Override
+public List<Category> getAllCategories() {
+    String sql = "SELECT category_id, name, description FROM categories";
+    List<Category> list = new ArrayList<>();
 
+    try (Connection conn = getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
 
-@Component
-public class JdbcProductDao implements ProductDao {
-
-    private final DataSource dataSource;
-
-    public JdbcProductDao(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
-
-    @Override
-    public List<Product> getAll() {
-        List<Product> products = new ArrayList<>();
-        String sql = "SELECT product_id, name, price, category_id FROM products";
-
-        try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
-
-            while (rs.next()) {
-                products.add(new Product(
-                        rs.getInt("product_id"),
-                        rs.getString("name"),
-                        rs.getBigDecimal("price"),
-                        rs.getInt("category_id")
-                ));
-            }
+        while (rs.next()) {
+            list.add(mapRow(rs));
         }
-        return products;
+        return list;
+
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
     }
 }
 
