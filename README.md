@@ -71,7 +71,7 @@ public class JdbcProductDao implements ProductDao {
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-## 🛠️ Technologies Used
+   Technologies Used
 
 * Java 17
 * Spring Boot & Spring Security (JWT)
@@ -82,7 +82,7 @@ public class JdbcProductDao implements ProductDao {
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-## Future Improvements
+  Future Improvements
 
 - Order checkout and payment processing
 - Inventory tracking and low-stock alerts
