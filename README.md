@@ -1,4 +1,4 @@
-Record Rendezvous – E‑Commerce API 
+
 
 
 # 🎵 Record Rendezvous – E-Commerce API (Minimum Viable Product)
