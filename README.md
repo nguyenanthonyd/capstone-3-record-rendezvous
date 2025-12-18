@@ -15,16 +15,20 @@ The API allows users to browse music records by category while enabling administ
 > Screenshots below show the application tested using Postman and MySQL.
 
 * **User Login (JWT Authentication)**
-  ![Postman Login](images/postman-login.png)
+  <img width="884" height="875" alt="Screenshot 2025-12-18 135534" src="https://github.com/user-attachments/assets/946b357d-33ad-4f9e-84ef-8f4e303b237d" />
+
 
 * **View Categories**
-  ![Get Categories](images/get-categories.png)
+  <img width="883" height="871" alt="Screenshot 2025-12-18 135616" src="https://github.com/user-attachments/assets/172b41d4-eb67-4ec0-a689-87155347985d" />
+
 
 * **View Products (Records)**
-  ![Get Products](images/get-products.png)
+  <img width="886" height="867" alt="Screenshot 2025-12-18 140602" src="https://github.com/user-attachments/assets/8b15c926-5a8c-4fad-8070-d5e62c0561a2" />
+
 
 * **Database Tables**
-  ![MySQL Tables](images/mysql-tables.png)
+ <img width="1362" height="809" alt="Screenshot 2025-12-18 140801" src="https://github.com/user-attachments/assets/a17a8a3d-3e3e-403a-8ec5-ded0688881a2" />
+
 
 
 ## ⭐ Interesting Code Highlight
