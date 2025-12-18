@@ -1,0 +1,12 @@
+package com.pluralsight.data.mysql;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class MySqlProfileDaoTest {
+
+    @Test
+    void create() {
+    }
+}

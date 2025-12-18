@@ -74,7 +74,7 @@ public class ProductsController
         }
         catch(Exception ex)
         {
-            ex.printStackTrace(); // <-- ADD THIS
+            ex.printStackTrace();
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage(), ex);
         }
     }
